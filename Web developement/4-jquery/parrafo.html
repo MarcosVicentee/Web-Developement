@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title> Parrafo</title>
+
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous">
+        </script>
+
+        <style type="text/css">
+
+        #p2{
+            display: none;
+        }
+        
+        
+        </style>
+    </head>
+    <body>
+
+        <p id="p1">Esto es un parrafo que esta a punto de desaparecer.</p>
+        <p id="p2">Hola.</p>
+        <button id="b1">Borrar</button>
+        <button id="b2">Aparecer</button>
+        <hr>
+        <p id="p3">Textito guapo</p>
+        <button id="b3">Toggle</button>
+
+
+        <script>
+            
+            $("#b1").click(function(){
+                $("#p1").fadeOut();
+            })
+            $("#b2").click(function(){
+                $("#p2").fadeIn();
+            })
+
+            //let oculto = false;  
+           /* $("#b3").click(function(){
+                
+                if (oculto){
+                    $("#p3").fadeIn();
+                    oculto = false;
+                }
+                else{
+                    $("#p3").fadeOut();
+                    oculto = true;
+                }
+            }) */
+
+            $("#b3").click(function(){
+
+                if ($("#p3").css("display") == "none"){
+                    $("#p3").fadeIn();
+                }
+                else{
+                    $("#p3").fadeOut();
+                }
+            })
+
+
+
+        </script>
+
+    </body>
+</html>

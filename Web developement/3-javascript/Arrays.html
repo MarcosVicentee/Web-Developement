@@ -1,0 +1,40 @@
+<html>
+
+
+    <head>
+
+        <title> JS arrays </title>
+
+    </head>
+
+    <body>
+        
+        <script type="text/javascript">
+           
+           var array = new Array();
+
+           array[0] = "Miguitas"
+           array[1] = "Pizza"
+           array[2] = "Hamburguesa"
+
+            alert(array[0]);
+
+            console.log(array);
+
+            var tweets = ["Hola a todos", "Israel no es un estado legitimo"];
+            alert(tweets[1]);
+            tweets.push("Tercer tweet");
+            tweets.splice(1,1); //Borra posicion 1 
+            tweets.splice(1,0,"Metemos esto") //Mete en la pos 1 "Metemos esto"
+            tweets.splice(1,1,"Sustituimos por pos 1") //Sustituimos lo que haya en pos 1 por este string
+            
+
+            console.log(tweets);
+
+        </script>
+
+    </body>
+
+
+
+</html>

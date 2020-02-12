@@ -1,0 +1,149 @@
+<html>
+    <head>
+
+        <link href="https://fonts.googleapis.com/css?family=Bungee+Shade&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap" rel="stylesheet">
+        <title> Test de Reacción </title>
+
+        <style type="text/css">
+
+
+            body{
+                background-color: rgb(80, 92, 104);
+            }
+
+
+            .titulo{
+                font-family: 'Space Mono', monospace;
+                font-size:xx-large;
+                color:rgb(255, 136, 136);
+                font-weight: bold;
+                
+            }
+            .p1{
+                font-family: 'Space Mono', monospace;
+                color:lawngreen
+            }
+
+            .cuadrado{
+                border: black;
+                border-style: solid;
+                border-width: 3px;
+                position: relative;
+            }
+            .circulo{
+                border: black;
+                border-style: solid;
+                border-width: 3px;
+                border-radius: 50%;
+                position: relative;
+            }
+            .rectangulo{
+                border: black;
+                border-style: solid;
+                border-width: 3px;
+                width: 100%;
+                height: 50%;
+                position: relative;
+            }
+            
+            .coral{
+                background-color: lightcoral;
+                
+            }
+            .cyan{
+                background-color:lightcyan;
+                
+            }
+            .verde{
+                background-color:lightgreen;
+            }
+            .salmon{
+                background-color:lightsalmon;
+            }
+            .azul{
+                background-color:lightskyblue;
+            }
+
+
+
+
+        </style>
+
+    </head>
+    <body>
+
+        <p class="titulo" id="titulo">Test de reaccion</p>
+        <p class="p1" id="p1">Haz click en las figuras lo mas rapido que puedas!</p>
+        <p class="p1" id="p1"> Tu tiempo: <span id="pTiempo"></span></p>
+
+        <div id="figura"></div>
+
+
+
+        <script type="text/javascript">
+
+
+            const arrayFormas = ["cuadrado", "circulo", "rectangulo"];
+            const arrayColores = ["coral", "cyan", "verde", "salmon", "azul"]
+            let arrayAtributos = [];
+            let start = new Date().getTime();
+
+            
+
+            arrayAtributos = escogerValores(arrayFormas, arrayColores);
+            atributos(arrayAtributos);
+
+            
+            document.getElementById("figura").onclick = function(arrayAtributos){
+                let final = new Date().getTime();
+                let tiempo = (final - start) / 1000;
+                console.log(tiempo)
+                document.getElementById("pTiempo").innerHTML = tiempo + "s";
+
+                arrayAtributos = escogerValores(arrayFormas, arrayColores);
+                atributos(arrayAtributos);
+
+                start = new Date().getTime();
+                } 
+            
+            
+
+
+
+
+            function escogerValores(arrayFormas, arrayColores){
+                
+                let numForma = Math.floor(Math.random() * 2);
+                let numColor = Math.floor(Math.random() * 4);
+                let numAlto = Math.floor(Math.random() * 300) + 100;
+                let numAncho = Math.floor(Math.random() * 300) + 100;
+                let posicionX = Math.floor(Math.random() * 1000) ;
+                let posicionY = Math.floor(Math.random() * 180);
+
+                return [numForma, numColor, numAlto, numAncho, posicionX, posicionY];
+
+            }
+
+
+            function atributos(arrayAtributos){
+                let arrayClases = [ ...document.getElementById("figura").classList];
+                
+                for (let index = 0; index < arrayClases.length; index++)
+                   { 
+                       document.getElementById("figura").classList.remove(arrayClases[index]);
+                    }
+
+                console.log(arrayAtributos);
+                document.getElementById("figura").classList.add(arrayFormas[arrayAtributos[0]]);
+                document.getElementById("figura").classList.add(arrayColores[arrayAtributos[1]]);
+                document.getElementById("figura").style.height = arrayAtributos[2];
+                document.getElementById("figura").style.width = arrayAtributos[3];
+                document.getElementById("figura").style.left = arrayAtributos[4];
+                document.getElementById("figura").style.top = arrayAtributos[5];
+            }
+        
+
+        </script>
+    </body>
+</html>

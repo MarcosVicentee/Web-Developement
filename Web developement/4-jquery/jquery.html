@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <title></title>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous">
+    </script>
+
+    <style type="text/css">
+    
+    .circulo{
+      border: black;
+      border-style: solid;
+      border-width: 4px;
+      background-color:greenyellow;
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      margin: 20px;
+      position: relative;
+    }
+    .cuadrado{
+      border: black;
+      border-style: solid;
+      border-width: 4px;
+      background-color:rgb(255, 107, 107);
+      width: 150px;
+      height: 150px;
+      margin: 20px;
+      position: relative;
+
+    }
+
+
+    
+    
+    </style>
+
+
+  </head>
+  <body>
+    
+    <div class="circulo" id="circulo1"></div>
+    <div class="cuadrado"></div>
+    <div class="cuadrado"></div>
+    <p id="p1">Esto es texto</p>
+    <div class="circulo" id="circulo2"></div>
+    
+
+
+
+    <script type="text/javascript">
+
+      $("#circulo1").click(function(){
+        $("#p1").html("Este texto ha cambiado");
+
+      });
+
+      $(".cuadrado").hover(function(){
+        $("#p1").html("Has hecho hover en un cuadrado");
+
+      });
+
+
+      $("#circulo2").click(function(){
+
+          $("#circulo2").css("background-color", "lightcoral");
+
+      })
+      
+
+    
+
+
+
+    
+    
+    </script>
+
+  </body>
+</html>
