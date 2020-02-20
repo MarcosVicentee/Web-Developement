@@ -12,24 +12,15 @@ function mejoresPresupuestos(proyectosOfrecidos, presupuestosOfrecidos){
             console.log("ArrayIndices [ " + arrayIndices + " ]")
             
 
-            arrayIndices.forEach(element => { //Por cada elemento de indices.
-                arrayValores.push(presupuestosOfrecidos[element])  //Metemos en el arrayValores los elementos de presupuestosOfrecidos en las posiciones del arrayIndice
-                
-                console.log(arrayIndices[element])
+            arrayIndices.forEach(valor => { //Por cada elemento de indices.
+                arrayValores.push(presupuestosOfrecidos[valor])  //Metemos en el arrayValores los elementos de presupuestosOfrecidos en las posiciones del arrayIndice
 
-                /* proyectosOfrecidos.splice(arrayIndices[valor], 1);
-                presupuestosOfrecidos.splice(arrayIndices[valor, 1]);  */  
-                console.log("Array proyectos Ofrecidos [ " + proyectosOfrecidos + " ]")
-                console.log("Array Presupuestos Ofrecidos [ " + presupuestosOfrecidos + " ]")
-                console.log("------------------------------------------------")
             });
-
-            
 
             console.log("Array Valores [ " + arrayValores + " ]")
             arrPresupuestos.push(Math.min.apply(Math, arrayValores)); //Meto el minimo valor de los presupuestos ofrecidos.
             console.log("Array Presupuestos [ " + arrPresupuestos + " ]")
-            console.log("================================================")
+        
             //LO SIGUIENTE ES QUE NO EVELUE EL PROYECTO 2 VECES SI YA SE HA EVALUADO => ARRAY DE PROYECTOS EVALUADOS O METODO QUE DEVOLVIA EL PRIMER ELEMENTO QUE COINDIDIA CON EL VALOR O ALGO ASI  
             
         });
